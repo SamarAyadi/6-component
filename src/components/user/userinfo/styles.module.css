@@ -1,0 +1,13 @@
+.userInfo {
+    border: 1px solid black;
+    font-size: 16px;
+    margin: 5px 10px;
+    padding: 5px;
+}
+.userInfo ul {
+    list-style-type: none;
+}
+
+.alert{
+    border: 1px solid red;
+}
