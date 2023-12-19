@@ -1,8 +1,7 @@
 import { useState } from "react";
-import styles from "./styles.module.css";
-import { Input } from "../../form";
 
-const { formClass } = styles;
+import { Button, Input } from "../../form";
+
 // DRY
 
 const initState = {
@@ -28,37 +27,35 @@ const UserForm = ({ addUser }) => {
     addUser(form);
     setForm(initState);
   };
-  return (
-    <div className={formClass}>
-      <form onSubmit={formHandler}>
-        <Input
-          type="text"
-          name="name"
-          value={form.name}
-          onChange={inputHandler}
-        />
-        <Input
-          type="text"
-          name="age"
-          value={form.age}
-          onChange={inputHandler}
-        />
-        <Input
-          type="text"
-          name="phone"
-          value={form.phone}
-          onChange={inputHandler}
-        />
-        <Input
-          type="text"
-          name="location"
-          value={form.location}
-          onChange={inputHandler}
-        />
 
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
+  const resetHandler = () => {
+    setForm(initState);
+  }
+  return (
+    <form onSubmit={formHandler} onReset={resetHandler}>
+      <Input
+        type="text"
+        name="name"
+        value={form.name}
+        onChange={inputHandler}
+      />
+      <Input type="text" name="age" value={form.age} onChange={inputHandler} />
+      <Input
+        type="text"
+        name="phone"
+        value={form.phone}
+        onChange={inputHandler}
+      />
+      <Input
+        type="text"
+        name="location"
+        value={form.location}
+        onChange={inputHandler}
+      />
+
+      <Button >Save</Button>
+      <Button type="reset">Reset</Button>
+    </form>
   );
 };
 

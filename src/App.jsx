@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-import { UserInfo, Container, UserForm } from "./components";
+import { UserInfo, UserForm } from "./components/user";
+
+import { Container } from "./components/layout";
 
 const App = () => {
   const [userData, setUserData] = useState([
